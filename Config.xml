@@ -16,5 +16,18 @@
   <author href="https://build.phonegap.com" email="support@phonegap.com">
       Hardeep Shoker
   </author>
+  
+  
+  <!-- Wildcards are allowed for the protocol, as a prefix
+     to the host, or as a suffix to the path -->
+	<!--
+	<allow-navigation href="*://*.example.com/*" />
+	-->
+	
+	
+	<!-- A wildcard can be used to whitelist the entire network,
+     over HTTP and HTTPS.
+     *NOT RECOMMENDED* -->
+	<allow-navigation href="*" />
 
 </widget>
