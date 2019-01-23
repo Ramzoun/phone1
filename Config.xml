@@ -20,29 +20,11 @@
   <!-- Add the whitelist plugin -->
 <plugin name="cordova-plugin-whitelist" source="npm" spec="*"/>
 
-<allow-navigation href="https://*youtube.com/*"/>
+
  
   <access origin="*" />
   
-  <!-- Wildcards are allowed for the protocol, as a prefix
-     to the host, or as a suffix to the path -->
-	
-	<allow-navigation href="https://api.rss2json.com/*" />
-	
-<allow-navigation href="*" />
-<allow-intent href="http://*/*" />
-<allow-intent href="https://*/*" />
-	
-	<!-- A wildcard can be used to whitelist the entire network,
-     over HTTP and HTTPS.
-     *NOT RECOMMENDED* -->
-	 <!--
-	<allow-navigation href="*" />
-	-->
-<!--
-	<config-file target="AndroidManifest.xml" parent="/*">
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-	</config-file>
--->
+  
+  
 
 </widget>
