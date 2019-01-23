@@ -29,7 +29,9 @@
 	
 	<allow-navigation href="https://api.rss2json.com/*" />
 	
-	
+<allow-navigation href="*" />
+<allow-intent href="http://*/*" />
+<allow-intent href="https://*/*" />
 	
 	<!-- A wildcard can be used to whitelist the entire network,
      over HTTP and HTTPS.
