@@ -17,6 +17,7 @@
       Hardeep Shoker
   </author>
   
+  <access origin="*" />
   
   <!-- Wildcards are allowed for the protocol, as a prefix
      to the host, or as a suffix to the path -->
