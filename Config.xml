@@ -17,6 +17,9 @@
       Hardeep Shoker
   </author>
   
+  <!-- Add the whitelist plugin -->
+<plugin name="cordova-plugin-whitelist" source="npm" spec="*"/>
+  
   <access origin="*" />
   
   <!-- Wildcards are allowed for the protocol, as a prefix
