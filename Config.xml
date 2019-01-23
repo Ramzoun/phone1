@@ -23,7 +23,8 @@
 
  
   <access origin="*" />
-  
+  <allow-navigation href="*" />
+<allow-intent href="*" />
   
   
 
