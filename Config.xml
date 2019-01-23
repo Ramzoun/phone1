@@ -27,5 +27,7 @@
 <allow-intent href="*" />
   
   
+  <uses-permission android:name="com.phonegap.example.permission.READ_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="com.phonegap.example.permission.WRITE_EXTERNAL_STORAGE"/>
 
 </widget>
