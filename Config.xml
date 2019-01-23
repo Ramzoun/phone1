@@ -32,4 +32,9 @@
 	<allow-navigation href="*" />
 	-->
 
+	<config-file target="AndroidManifest.xml" parent="/*">
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+	</config-file>
+
+
 </widget>
