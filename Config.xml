@@ -16,11 +16,7 @@
   <author href="https://build.phonegap.com" email="support@phonegap.com">
       me me
   </author>
-  
-  <!-- Add the whitelist plugin -->
-<plugin name="cordova-plugin-whitelist" spec="*"/>
-
-
+ 
  
   <access origin="*"></access>
   <allow-navigation href="*" />
