@@ -22,9 +22,8 @@
 
 
  
-  <access origin="*" launch-external="yes" />
+  <access origin="*"></access>
   <allow-navigation href="*" />
-<allow-intent href="http://*/*" />
   
   
 
