@@ -25,7 +25,7 @@
   <access origin="*" />
   <allow-navigation href="*" />
 <allow-intent href="*://*/*" />
-  
+ <allow-intent href="*/*" />
   
   
 	<feature name="File">
