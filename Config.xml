@@ -27,13 +27,13 @@
 <allow-intent href="*://*/*" />
   
   
-  <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Cache" >
-                <param name="android-package" value="com.phonegap.example.Cache"/>
-            </feature>
-        </config-file>
-    </platform>
+  
+	<feature name="File">
+    <param name="android-package" value="org.apache.cordova.FileUtils" />
+</feature>
+<feature name="FileTransfer">
+    <param name="android-package" value="org.apache.cordova.FileTransfer" />
+</feature>
   
   <uses-permission android:name="com.phonegap.example.permission.READ_EXTERNAL_STORAGE"/>
   <uses-permission android:name="com.phonegap.example.permission.WRITE_EXTERNAL_STORAGE"/>
