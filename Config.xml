@@ -17,7 +17,7 @@
       me me
   </author>
  
- 
+ <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
   <access origin="*"></access>
   <allow-navigation href="*" />
   
