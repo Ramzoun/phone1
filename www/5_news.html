@@ -4,18 +4,19 @@
 <meta charset="utf-8">
 <script async src="script/v0.js"></script>
 <script async custom-element="amp-sidebar" src="script/amp-sidebar-0.1.js"></script>
-<script async custom-element="amp-social-share" src="script/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-list" src="script/amp-list-0.1.js"></script>
+<script async custom-template="amp-mustache" src="script/amp-mustache-0.2.js"></script>
+<script async custom-element="amp-bind" src="script/amp-bind-0.1.js"></script>
 <script async custom-element="amp-accordion" src="script/amp-accordion-0.1.js"></script>
-<script async custom-element="amp-carousel" src="script/amp-carousel-0.1.js"></script>
 <!--AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.-->
 <link rel="canonical" href="index.html">
 <link rel="stylesheet" href="styles/font-awesome.min.css">
 <link rel="stylesheet" href="styles/css.css">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-
+<!--
 <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src *; media-src *; connect-src *">
-
+-->
 <style amp-custom>
 body{font-family:'Roboto', sans-serif; font-size:13px; background-color:#ececec;}
 
@@ -1511,191 +1512,67 @@ ol, ul{line-height:24px; margin-left:20px;}
 		<em class="sidebar-copyright">Copyright Ramzoun. All Rights Reserved</em>
 	</amp-sidebar>
 	
+	<div class="page-content">
 	
 	
 	
 	
 	
 	
-	<div class="header-clear"></div>
+	<template type="amp-mustache" id="amp-template-2">	
+	<div class="material-box">
+	<amp-accordion class="accordion">
+				<section>
+					<h4>{{title}} <i class="fa fa-chevron-down"></i></h4>
+					<p>
+					
+					<amp-img src="{{thumbnail}}" width="300" height="150" layout="responsive"></amp-img>
+					</p>
+				</section>
+			</amp-accordion>
+	</div>
+	</template>
+	
+	
+	
+	
+	<template type="amp-mustache" id="amp-template-id">
+		
+  <div class="material-box">
+			<div class="full-bottom">
+				<div class="news-thumbs">
+					<a href="#" class="news-item">
+						<amp-img class="responsive-img" src="{{thumbnail}}" width="95" height="95" layout="responsive"></amp-img>
+						<h5>{{title}}</h5>
+						<p>
+							{{pubDate}} 
+						</p>
+					</a>
+				</div>
+			</div>
+	</div>
+</template>
+	
+	
+	
 	
 	<div class="page-content-before"></div>
-	<div class="page-content" id="id01">
 	
-		<!--
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/1t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>Android 25 now Out</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-		</div>
-		
-		
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/2t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>iOS 31 is here</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-		</div>
-				
-		
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/3t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>Envato is awesome</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-		</div>
-		
-		
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/4t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>Enabled rocks mobiles</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-		</div>
-		
-				
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/1t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>Android 25 now Out</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-		</div>
-		
-		
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/2t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>iOS 31 is here</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-		</div>
-		
-		
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/3t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>Envato is awesome</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-		</div>
-		
-		
-		<div class="material-box">
-			<div class="news-thumbs">
-				<a href="#" class="news-item">
-					<amp-img class="responsive-img" src="images/pictures/4t.jpg" width="95" height="95" layout="responsive"></amp-img>
-					<h5>Enabled rocks mobiles</h5>
-					<p>
-						Donec libero turpis, rhoncus ornare ligula eget, accumsan tincidunt ex. 
-					</p>
-				</a>
-			</div>
-			-->
-		</div>
-		
-		
-		<div class="footer material-box"></div>
-	</div>
+	<amp-list id="amp-list-placeholder"
+  noloading
+  reset-on-refresh
+  layout="fixed-height"
+  height="654"
+  src="https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nessma.tv%2Fnews_rss_channel.php%3Fchannel_id%3D7"
+  template="amp-template-id">
+  <div placeholder>
+    <div class="page-content material-box"></div>
+    <div class="page-content material-box"></div>
+    <div class="page-content material-box"></div>
+    <div class="page-content material-box"></div>
+  </div>
+</amp-list>
 
-	
-	<script src="script/rssLoader.js"></script>
-	<script>
-			getJSON("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nessma.tv%2Fnews_rss_channel.php%3Fchannel_id%3D7",
-function(err, data) {
-  if (err !== null) {
-    alert('Something went wrong: ' + err);
-  } else {
-    var out = "";
-	var img_patt = /https(.*)jpg/g;
-	var i;
-	for(i = 0; i < data['items'].length; i++) {
-	var img = img_patt.exec(data['items'][i]['description']);
-	if(img != null) img = img[0]; else img = 'images/pictures/4t.jpg';
-    out += 	'<div class="material-box">'+
-			'<div class="news-thumbs">'+
-				'<a href="#" class="news-item">'+
-					'<amp-img class="responsive-img" src="'+img+'" width="95" height="95" layout="responsive"></amp-img>'+
-					'<h5>'+data['items'][i]['title']+'</h5>'+
-				'</a>'+
-			'</div>'+
-		'</div>';
-		console.log(img);
-	}
-	document.getElementById("id01").innerHTML = out;
-  }
-});
-	</script>
-	
-	
-	
-<!--
-	<script>
-			getJSON("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nessma.tv%2Fnews_rss_channel.php%3Fchannel_id%3D7",
-function(err, data) {
-  if (err !== null) {
-    alert('Something went wrong: ' + err);
-  } else {
-    var out = "";
-	//var img_patt = /www(.*).jpg/g;
-	var text_patt = />(.*)/g;
-	var i;
-	for(i = 0; i < data['items'].length; i++) {
-	//var img = img_patt.exec(data['items'][i]['description']);
-	var img = 'images/pictures/4t.jpg';
-	var txt = text_patt.exec(data['items'][i]['description']);
-	if(txt != null) txt = txt[1]; else txt = '';
-    out += 	'<div class="material-box">'+
-			'<div class="news-thumbs">'+
-				'<a href="#" class="news-item">'+
-					'<amp-img class="responsive-img" src="'+img+'" width="95" height="95" layout="responsive"></amp-img>'+
-					'<h5>'+data['items'][i]['title']+'</h5>'+
-					'<p>'+
-						txt+ 
-					'</p>'+
-				'</a>'+
-			'</div>'+
-		'</div>';
-		
-	//out += "x<br>"
-	}
-	document.getElementById("id01").innerHTML = out; //""+data['items'][0]['title'];
-  }
-});
-	</script>
--->	
+	</div>
 </body>
 </html>
