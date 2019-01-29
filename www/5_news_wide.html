@@ -1514,64 +1514,38 @@ ol, ul{line-height:24px; margin-left:20px;}
 	
 	<div class="page-content">
 	
-	
-	
-	
-	
-	
-	<template type="amp-mustache" id="amp-template-2">	
-	<div class="material-box">
-	<amp-accordion class="accordion">
-				<section>
-					<h4>{{title}} <i class="fa fa-chevron-down"></i></h4>
-					<p>
-					
-					<amp-img src="{{thumbnail}}" width="300" height="150" layout="responsive"></amp-img>
-					</p>
-				</section>
-			</amp-accordion>
-	</div>
-	</template>
-	
-	
-	
-	
-	<template type="amp-mustache" id="amp-template-id">
-		
-  <div class="material-box">
-			<div class="full-bottom">
-				<div class="news-thumbs">
-					<a href="#" class="news-item">
-						<amp-img class="responsive-img" src="{{thumbnail}}" width="95" height="95" layout="responsive"></amp-img>
-						<h5>{{title}}</h5>
+		<template type="amp-mustache" id="amp-template-2">	
+			<div class="material-box">
+				<amp-accordion class="accordion">
+					<section>
+						<h4>{{title}} <i class="fa fa-chevron-down"></i></h4>
 						<p>
-							{{pubDate}} 
+							<amp-img src="{{thumbnail}}" width="300" height="150" layout="responsive"></amp-img>
+							<span>{{description}}</span>
 						</p>
-					</a>
-				</div>
+					</section>
+				</amp-accordion>
 			</div>
-	</div>
-</template>
+		</template>
 	
 	
 	
+		<div class="page-content-before"></div>
 	
-	<div class="page-content-before"></div>
-	
-	<amp-list id="amp-list-placeholder"
-  noloading
-  reset-on-refresh
-  layout="fixed-height"
-  height="654"
-  src="https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nessma.tv%2Fnews_rss_channel.php%3Fchannel_id%3D7"
-  template="amp-template-id">
-  <div placeholder>
-    <div class="page-content material-box"></div>
-    <div class="page-content material-box"></div>
-    <div class="page-content material-box"></div>
-    <div class="page-content material-box"></div>
-  </div>
-</amp-list>
+		<amp-list id="amp-list-placeholder"
+			noloading
+			reset-on-refresh
+			layout="fixed-height"
+			height="654"
+			src="https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nessma.tv%2Fnews_rss_channel.php%3Fchannel_id%3D7"
+		template="amp-template-2">
+			<div placeholder>
+				<div class="page-content material-box"></div>
+				<div class="page-content material-box"></div>
+				<div class="page-content material-box"></div>
+				<div class="page-content material-box"></div>
+			</div>
+		</amp-list>
 
 	</div>
 </body>

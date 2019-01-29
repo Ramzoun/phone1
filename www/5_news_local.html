@@ -4,16 +4,19 @@
 <meta charset="utf-8">
 <script async src="script/v0.js"></script>
 <script async custom-element="amp-sidebar" src="script/amp-sidebar-0.1.js"></script>
-<script async custom-element="amp-social-share" src="script/amp-social-share-0.1.js"></script>
+<script async custom-element="amp-list" src="script/amp-list-0.1.js"></script>
+<script async custom-template="amp-mustache" src="script/amp-mustache-0.2.js"></script>
+<script async custom-element="amp-bind" src="script/amp-bind-0.1.js"></script>
 <script async custom-element="amp-accordion" src="script/amp-accordion-0.1.js"></script>
-<script async custom-element="amp-carousel" src="script/amp-carousel-0.1.js"></script>
-<script async custom-element="amp-image-lightbox" src="script/amp-image-lightbox-0.1.js"></script>
-
 <!--AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.-->
 <link rel="canonical" href="index.html">
 <link rel="stylesheet" href="styles/font-awesome.min.css">
 <link rel="stylesheet" href="styles/css.css">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!--
+<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src *; media-src *; connect-src *">
+-->
 <style amp-custom>
 body{font-family:'Roboto', sans-serif; font-size:13px; background-color:#ececec;}
 
@@ -403,8 +406,8 @@ input[data-submenu-items]{
 .material-box{
 	background-color:#FFFFFF;
 	box-shadow: 0 2px 5px 1px rgba(0,0,0,0.1);
-	margin-bottom:30px;
-	padding:20px;
+	margin-bottom:10px;
+	padding:10px;
 }
 
 .material-news{
@@ -1259,7 +1262,7 @@ ol, ul{line-height:24px; margin-left:20px;}
 /*News Thumbs*/
 
 .news-thumbs .news-item{
-	min-height:125px;
+	min-height:110px;
 	color:#1f1f1f;
 }
 
@@ -1271,7 +1274,7 @@ ol, ul{line-height:24px; margin-left:20px;}
 
 .news-thumbs .news-item h5{
 	margin-left:110px;
-	font-size:15px;
+	font-size:14px;
 }
 
 .news-thumbs .news-item p{
@@ -1460,7 +1463,7 @@ ol, ul{line-height:24px; margin-left:20px;}
 		<div class="sidebar-header"><a class="sidebar-logo" href="index.html"><em>A new, elegant design</em></a></div>
 		
 		<ul class="menu">
-			<li class="selected"><a href="index.html"><i class="fa fa-home"></i>الرئيسية</a></li>
+			<li><a href="index.html"><i class="fa fa-home"></i>الرئيسية</a></li>
 		</ul>
 		
 		
@@ -1471,11 +1474,11 @@ ol, ul{line-height:24px; margin-left:20px;}
 		
 		
 		<ul class="menu">
-			<li><a href="5_news_local.html"><i class="fa fa-newspaper-o"></i>أخبار الرياضة الوطنية</a></li>
+			<li><a href="5_news.html"><i class="fa fa-newspaper-o"></i>أخبار الرياضة الوطنية</a></li>
 		</ul>
 		
 		<ul class="menu">
-			<li><a href="5_news_wide.html"><i class="fa fa-newspaper-o"></i>أخبار الرياضة العالمية</a></li>
+			<li class="selected"><a href="5_news.html"><i class="fa fa-newspaper-o"></i>أخبار الرياضة العالمية</a></li>
 		</ul>
 		
 		<ul class="menu">
@@ -1510,248 +1513,43 @@ ol, ul{line-height:24px; margin-left:20px;}
 	</amp-sidebar>
 	
 	<div class="page-content">
-		
-		<div class="sliders full-bottom">
-			<amp-carousel class="slider" width="700" height="450" layout="responsive" type="slides" controls autoplay loop delay="3000">
-				<div>
-					<amp-img class="responsive-img" src="images/pictures/3.jpg" layout="fill"></amp-img>
-					<div class="caption">
-						<h3>Meet AMP Drawer</h3>
-						<p>Beautifully Powere Google AMP Mobile Template!</p>
-					</div>
-				</div>
-				<div>
-					<amp-img class="responsive-img" src="images/pictures/1.jpg" layout="fill"></amp-img>
-					<div class="caption">
-						<h3>It's Blazing Fast</h3>
-						<p>Nothing Compares to Google AMP!</p>
-					</div>
-				</div>
-				<div>
-					<amp-img class="responsive-img" src="images/pictures/4.jpg" layout="fill"></amp-img>
-					<div class="caption">
-						<h3>It's Extremely Powereful</h3>
-						<p>Filled with Awesome Custom Features!</p>
-					</div>
-				</div>
-				<div>
-					<amp-img class="responsive-img" src="images/pictures/7.jpg" layout="fill"></amp-img>
-					<div class="caption">
-						<h3>It's Childproof Easy</h3>
-						<p>We Made it Super Simple For You!</p>
-					</div>
-				</div>
-			</amp-carousel>
-		</div>
-		
-		<div class="content material-box">
-			<h4 class="uppercase ultrabold quarter-bottom">Meet AMP Material</h4>
-			<p>
-				AMP Material combines the beautiful material design style from Google with the 
-				beauty of Material Design to obtain an absolutely gorgeous and fast template.
-			</p>
-		</div>
-		<div class="under-material">
-			<a href="#" class="under-material-link">Read More</a>
-			<amp-social-share class="under-material-icon" type="twitter" width="43" height="43"> </amp-social-share>
-			<amp-social-share class="under-material-icon" type="facebook" width="43" height="43" data-param-app_id="254325784911610"></amp-social-share>
-			<amp-social-share class="under-material-icon" type="gplus" width="43" height="43"></amp-social-share>
-			<div class="clear"></div>
-		</div>
-		
-		<div class="material-columns">
-			<div class="half-material-box-left">
-				<i class="center-text full-bottom huge-icon color-yellow-dark fa fa-bolt"></i>
-				<h3 class="center-text">AMP</h3>
-				<p class="center-text small-text half-bottom">
-					Built with AMP, 100% valid, custom built, ultra fast!
-				</p>
-			</div>		
-			<div class="half-material-box-right">
-				<i class="center-text full-bottom huge-icon color-green-dark fa fa-check"></i>
-				<h3 class="center-text">EASY</h3>
-				<p class="center-text small-text half-bottom">
-					Simple and clean code, documented for all to use!
-				</p>
-			</div>			
-			<div class="clear"></div>
-			<div class="half-material-box-left">
-				<i class="center-text full-bottom huge-icon color-blue-dark fa fa-code"></i>
-				<h3 class="center-text">CODE</h3>
-				<p class="center-text small-text half-bottom">
-					One stylesheet, still AMP valid. Our code is visionary!
-				</p>
-			</div>		
-			<div class="half-material-box-right">
-				<i class="center-text full-bottom huge-icon color-orange-dark fa fa-support"></i>
-				<h3 class="center-text">SUPPORT</h3>
-				<p class="center-text small-text half-bottom">
-					Always here to help our buyers any time and day!
-				</p>
-			</div>
-			<div class="clear"></div>
-		</div>
-		
-		<div class="material-box">
-			<h3 class="center-text uppercase ultrabold half-bottom">Need a hand?</h3>
-			<p class="center-text">
-				Give us a call or request a quote and one of our experts will get
-				back to you in the shortest possible time.
-			</p>
-			<a href="#" class="button-3d bg-blue-light button-center border-blue-dark uppercase ultrabold">Get Support</a>
-		</div>
-		
-		<amp-img class="material-box-image material-effect" alt="A view of the sea"
-		  src="images/demo_img2.png"
-		  width="800"
-		  height="600"
-		  layout="responsive">
-		</amp-img>
-		<div class="material-box">
-			<h2 class="uppercase ultrabold center-text">Featured Project</h2>
-			<p class="small-text center-text color-blue-light quarter-bottom">Another awesome AMP Project</p>
-			<p class="boxed-text center-text">
-				It's simple to create AMP material boxes, just one class! Also, check out another
-				card designed item.
-			</p>
-			<a href="https://themeforest.net/item/amp-cards-mobile-google-amp-template/20160231?ref=Enabled" class="button-3d button-center bg-blue-light border-blue-dark  uppercase bold full-bottom">AMP CARDS - $16</a>
-			<div class="full-bottom"></div>
-		</div>
-		<div class="under-material">
-			<a href="#" class="under-material-link">Read More</a>
-			<amp-social-share class="under-material-icon" type="twitter" width="43" height="43"> </amp-social-share>
-			<amp-social-share class="under-material-icon" type="facebook" width="43" height="43" data-param-app_id="254325784911610"></amp-social-share>
-			<amp-social-share class="under-material-icon" type="gplus" width="43" height="43"></amp-social-share>
-			<div class="clear"></div>
-		</div>
-
-				
-		<div class="material-box-full">
-			<amp-carousel class="staff-slider" height="470" type="slides" controls autoplay loop delay="3000">
-				<div class="slide">
-						<div class="inner-slide">
-						<amp-img src="images/pictures/1s.jpg" layout="responsive" width="466" height="466"></amp-img>
-						<h2 class="center-text uppercase ultrabold">John Doe</h2>                    
-						<p class="small-text color-red-dark center-text half-bottom">Assistent Manager</p>        
-						<p class="boxed-text center-text">
-							A typical name used in modern web templates to signify a person.
-						</p>
-						<div class="social-icons">
-							<a href="#" class="facebook-bg"><i class="fa fa-facebook color-white"></i></a>
-							<a href="#" class="twitter-bg"><i class="fa fa-twitter color-white"></i></a>
-							<a href="#" class="google-bg"><i class="fa fa-google-plus color-white"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="slide">
-					<div class="inner-slide">
-						<amp-img src="images/pictures/1s.jpg" layout="responsive" width="466" height="466"></amp-img>
-						<h2 class="center-text uppercase ultrabold">John Doe</h2>                    
-						<p class="small-text color-red-dark center-text half-bottom">Assistent Manager</p>        
-						<p class="boxed-text center-text">
-							A typical name used in modern web templates to signify a person.
-						</p>
-						<div class="social-icons">
-							<a href="#" class="facebook-bg"><i class="fa fa-facebook color-white"></i></a>
-							<a href="#" class="twitter-bg"><i class="fa fa-twitter color-white"></i></a>
-							<a href="#" class="google-bg"><i class="fa fa-google-plus color-white"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="slide">
-					<div class="inner-slide">
-						<amp-img src="images/pictures/1s.jpg" layout="responsive" width="466" height="466"></amp-img>
-						<h2 class="center-text uppercase ultrabold">John Doe</h2>                    
-						<p class="small-text color-red-dark center-text half-bottom">Assistent Manager</p>        
-						<p class="boxed-text center-text">
-							A typical name used in modern web templates to signify a person.
-						</p>
-						<div class="social-icons">
-							<a href="#" class="facebook-bg"><i class="fa fa-facebook color-white"></i></a>
-							<a href="#" class="twitter-bg"><i class="fa fa-twitter color-white"></i></a>
-							<a href="#" class="google-bg"><i class="fa fa-google-plus color-white"></i></a>
-						</div>
-					</div>
-				</div>      
-			</amp-carousel>    
-		</div>
-				
-		<div class="material-box">
-			<h4 class="center-text uppercase ultrabold quarter-bottom">Customer Testimonials</h4>
-			<p class="center-text">
-				Our customers love our work, and always give us amazing reviews! We'd love to share.
-			</p>
-			<div class="decoration decoration-margins"></div>
-			<amp-carousel class="quote-slider" height="330" type="slides" controls autoplay loop delay="3000">
-				<div class="slide">
-					<p>
-						Excellent support, complete documentation, this web app have everything I need and more, code clean and well explained.
-					</p>
-					<em>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-					</em>
-					<a href="#">John Doe</a>
-				</div>
-				<div class="slide">
-					<p>
-						The code is always great with any Enabled template, and the customer support that wins me over all the time helpful. 
-					</p>
-					<em>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-					</em>
-					<a href="#">John Doe</a>
-				</div>
-				<div class="slide">
-					<p>
-						The customer support is one of the best I've seen. This template is just very complete and easy to use. What a great work!
-					</p>
-					<em>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-					</em>
-					<a href="#">John Doe</a>
-				</div>
-			</amp-carousel>    
-
-		</div>
-				
-		<div class="material-box">
-			<h4 class="left-text uppercase ultrabold quarter-bottom">Featured Projects</h4>
-			<p class="left-text">
-				Check out some awesome features projects we have in store for you. They are awesome!
-			</p>
-
-			<amp-image-lightbox id="lightbox1"layout="nodisplay"></amp-image-lightbox>
-			<div class="gallery gallery-square half-bottom">
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/1s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/2s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/3s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/4s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/5s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/6s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/7s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/8s.jpg" width="300" height="300"></amp-img>
-				 <amp-img class="gallery-thumb" on="tap:lightbox1" role="button" tabindex="0" layout="responsive" src="images/pictures/9s.jpg" width="300" height="300"></amp-img>
-				<div class="clear"></div>
-			</div>
-		</div>
-
-		
-		<div class="footer material-box"></div>
-			
-	</div>
-
 	
+		<template type="amp-mustache" id="amp-template-id">
+			<div class="material-box">
+				<div class="full-bottom">
+					<div class="news-thumbs">
+						<a href="#" class="news-item">
+							<amp-img class="responsive-img" src="{{thumbnail}}" width="95" height="95" layout="responsive"></amp-img>
+							<h5>{{title}}</h5>
+							<p>
+								{{pubDate}} 
+							</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</template>
+	
+	
+	
+	
+		<div class="page-content-before"></div>
+	
+		<amp-list id="amp-list-placeholder"
+			noloading
+			reset-on-refresh
+			layout="fixed-height"
+			height="654"
+			src="https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.nessma.tv%2Fnews_rss_channel.php%3Fchannel_id%3D7"
+		template="amp-template-2">
+			<div placeholder>
+				<div class="page-content material-box"></div>
+				<div class="page-content material-box"></div>
+				<div class="page-content material-box"></div>
+				<div class="page-content material-box"></div>
+			</div>
+		</amp-list>
+
+	</div>
 </body>
 </html>
