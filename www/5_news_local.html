@@ -2,6 +2,7 @@
 <html ⚡>
 <head>
 <meta charset="utf-8">
+
 <script async src="script/v0.js"></script>
 <script async custom-element="amp-sidebar" src="script/amp-sidebar-0.1.js"></script>
 <script async custom-element="amp-list" src="script/amp-list-0.1.js"></script>
@@ -13,11 +14,8 @@
 <link rel="stylesheet" href="styles/css.css">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' *; style-src 'self' 'unsafe-inline'; media-src *; img-src *">
-
 <!--
-<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src *; media-src *; connect-src *">
+<meta http-equiv="Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline'; worker-src * 'unsafe-inline'; style-src 'unsafe-inline'; img-src *; media-src *; connect-src *">
 -->
 <style amp-custom>
 body{font-family:'Roboto', sans-serif; font-size:13px; background-color:#ececec;}
@@ -1516,6 +1514,7 @@ ol, ul{line-height:24px; margin-left:20px;}
 	
 	<div class="page-content">
 	
+	
 		<template type="amp-mustache" id="amp-template-1">
 			<div class="material-box">
 				<div class="full-bottom">
@@ -1539,6 +1538,7 @@ ol, ul{line-height:24px; margin-left:20px;}
 		<div class="page-content-before"></div>
 	
 		<amp-list id="amp-list-placeholder"
+			binding="refresh"
 			reset-on-refresh
 			layout="fixed-height"
 			height="654"
@@ -1552,6 +1552,37 @@ ol, ul{line-height:24px; margin-left:20px;}
 			</div>
 		</amp-list>
 
+	
+	<!--
+	<amp-list id="amp-list-placeholder"
+  noloading
+  reset-on-refresh
+  layout="fixed-height"
+  height="654"
+  src="https://ampbyexample.com/samples_templates/slow-json-with-items/?delay=10000">
+  <div placeholder>
+    <div class="product"></div>
+    <div class="product"></div>
+    <div class="product"></div>
+    <div class="product"></div>
+    <div class="product"></div>
+    <div class="product"></div>
+  </div>
+  <template type="amp-mustache">
+    <div class="product">
+      <amp-img width="150"
+        height="100"
+        alt="{{name}}"
+        src="{{img}}"></amp-img>
+      <div>
+        <div>{{name}}</div>
+        <div>{{{stars}}}</div>
+        <div>${{price}}</div>
+      </div>
+    </div>
+  </template>
+</amp-list>
+-->
 	</div>
 </body>
 </html>
