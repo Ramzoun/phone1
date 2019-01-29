@@ -8,17 +8,18 @@
 <script async custom-template="amp-mustache" src="script/amp-mustache-0.2.js"></script>
 <script async custom-element="amp-bind" src="script/amp-bind-0.1.js"></script>
 <script async custom-element="amp-accordion" src="script/amp-accordion-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="script/amp-install-serviceworker-0.1.js"></script>
 <!--AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.-->
 <link rel="canonical" href="index.html">
 <link rel="stylesheet" href="styles/font-awesome.min.css">
 <link rel="stylesheet" href="styles/css.css">
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<!--
+
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' *; style-src 'self' 'unsafe-inline'; media-src *; img-src *">
--->
+
 <!--
-<meta http-equiv="Content-Security-Policy" content="default-src *; script-src * 'unsafe-inline'; style-src 'unsafe-inline'; img-src *; media-src *; connect-src *">
+<meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src *; media-src *; connect-src *">
 -->
 <style amp-custom>
 body{font-family:'Roboto', sans-serif; font-size:13px; background-color:#ececec;}
@@ -1462,6 +1463,10 @@ ol, ul{line-height:24px; margin-left:20px;}
 		<a href="contact.html" class="header-icon-2"><i class="fa fa-envelope-o"></i></a>
 	</header>
 	
+	<amp-install-serviceworker src="sw.js"
+  data-iframe-src="https://ampbyexample.com/sw.html"
+  layout="nodisplay">
+</amp-install-serviceworker>
 		
 	<amp-sidebar id="sidebar" layout="nodisplay" side="left">
 		<div class="sidebar-header"><a class="sidebar-logo" href="index.html"><em>A new, elegant design</em></a></div>
@@ -1524,7 +1529,7 @@ ol, ul{line-height:24px; margin-left:20px;}
 					<section>
 						<h4>{{title}} <i class="fa fa-chevron-down"></i></h4>
 						<p>
-							<!--<amp-img src="{{thumbnail}}" width="300" height="150" layout="responsive"></amp-img>-->
+							<amp-img src="{{thumbnail}}" width="300" height="150" layout="responsive"></amp-img>
 							<span>{{description}}</span>
 						</p>
 					</section>
