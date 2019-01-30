@@ -1519,23 +1519,31 @@ ol, ul{line-height:24px; margin-left:20px;}
 	
 	<div class="page-content">
 	
-		<div class="timeline-icon"><i>00:00</i></div>		
-				<div class="container">
-					<h4 class="center-text half-bottom">حصاد الأسبوع</h4>
-					<amp-img class="half-bottom" src="http://www.renomia.cz/files/sport-622003802-3500x2333.jpg" width="200" height="80" layout="responsive"></amp-img>
-					<p class="center-text half-bottom">	</p>
-		</div>
 	
+		<amp-list width="auto"
+			height="100"
+			layout="fixed-height"
+		src="https://ampproject-b5f4c.firebaseapp.com/examples/data/amp-list-urls.json">
+			<template type="amp-mustache">
+				<div class="container">
+					<p class="center-text half-bottom">	
+						<a href="{{url}}">{{title}}</a>
+					</p>
+				</div>
+			</template>
+		</amp-list>
+	
+	<!--
 		<template type="amp-mustache" id="amp-template-2">	
 			<div class="material-box">
 				<amp-accordion class="accordion">
 					<section>
 						<h4>{{title}} <i class="fa fa-chevron-down"></i></h4>
 						<p>
-						<!--
+						
 							<amp-img src="https://www.nessma.tv/assets/news/750_375/1feac163719a4cb385d291a6f6ebcbe790.jpg" width="300" height="150" layout="responsive"></amp-img>
-							--><a href="{{thumbnail.href}}">{{title}}</a>
-							<span>{{thumbnail.href}}</span>
+							<a href="{{thumbnail.href}}">{{title}}</a>
+							<span>{{String(thumbnail)}}</span>
 							<span>{{thumbnail.toString()}}</span>
 						</p>
 					</section>
@@ -1561,7 +1569,8 @@ ol, ul{line-height:24px; margin-left:20px;}
 				<div class="page-content material-box"></div>
 			</div>
 		</amp-list>
-
+	
+	-->
 	</div>
 </body>
 </html>
