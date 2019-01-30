@@ -1523,14 +1523,15 @@ ol, ul{line-height:24px; margin-left:20px;}
 		<amp-list width="auto"
 			height="100"
 			layout="fixed-height"
+			items="."
 		src="https://ampproject-b5f4c.firebaseapp.com/examples/data/amp-list-urls.json">
-			<script type="text/plain" template="amp-mustache">
+			<template type="amp-mustache">
 				<div class="container">
 					<p class="center-text half-bottom">	
 						<a href="{{url}}">{{title}}</a>
 					</p>
 				</div>
-			</script>
+			</template>
 		</amp-list>
 	
 	<!--
